@@ -1,0 +1,8 @@
+dummyssl:                                                                   
+  certsdir: /etc/certificates
+  key: server.key
+  csr: server.csr
+  crt: server.crt
+  keylength: 4096
+  subj: '"/C=DE/ST=NRW/L=Cologne/O=Testing Company/OU=Testing/CN=*"'
+
