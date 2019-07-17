@@ -1,10 +1,10 @@
 ---
-{% set certsdir = salt['pillar.get']('dummyssl.certsdir', "/srv/obs/certs") %}
-{% set ssl_key = certsdir+salt['pillar.get']('dummyssl.key', "/server.key") %}
-{% set ssl_csr = certsdir+salt['pillar.get']('dummyssl.csr', "/server.csr") %}
-{% set ssl_crt = certsdir+salt['pillar.get']('dummyssl.crt', "/server.crt") %}
-{% set ssl_keylength = salt['pillar.get']('dummyssl.keylength', 2048) %}
-{% set ssl_subj = salt['pillar.get']('dummyssl.subj', '"/C=DE/ST=Bavaria/L=Munich/O=Penguin Dev/OU=Testing/CN=*"') %}
+{% set certsdir = salt['pillar.get']('dummyssl:certsdir', "/etc/certificates") %}
+{% set ssl_key = certsdir+salt['pillar.get']('dummyssl:key', "/server.key") %}
+{% set ssl_csr = certsdir+salt['pillar.get']('dummyssl:csr', "/server.csr") %}
+{% set ssl_crt = certsdir+salt['pillar.get']('dummyssl:crt', "/server.crt") %}
+{% set ssl_keylength = salt['pillar.get']('dummyssl:keylength', 2048) %}
+{% set ssl_subj = salt['pillar.get']('dummyssl:subj', '"/C=DE/ST=Bavaria/L=Munich/O=Penguin Dev/OU=Testing/CN=*"') %}
 
 {{certsdir}}:
   file.directory:
